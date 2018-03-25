@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 // The Scoreboard class manages showing the score to the player
 public class Scoreboard : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class Scoreboard : MonoBehaviour
         set
         {
             _scoreString = value;
-            GetComponent<GUIText>().text = _scoreString;
+            GetComponent<Text>().text = _scoreString;
         }
     }
     void Awake()

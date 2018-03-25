@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 // An enum to handle all the possible scoring events
 public enum ScoreEvent
@@ -47,8 +48,8 @@ public class Prospector : MonoBehaviour
 
     public FloatingScore fsRun;
 
-    public GUIText GTGameOver;
-    public GUIText GTRoundResult;
+    public Text GTGameOver;
+    public Text GTRoundResult;
 
     void Awake()
     {
@@ -68,18 +69,18 @@ public class Prospector : MonoBehaviour
         GameObject go = GameObject.Find("GameOver");
         if (go != null)
         {
-            GTGameOver = go.GetComponent<GUIText>();
+            GTGameOver = go.GetComponent<Text>();
         }
         go = GameObject.Find("RoundResult");
         if (go != null)
         {
-            GTRoundResult = go.GetComponent<GUIText>();
+            GTRoundResult = go.GetComponent<Text>();
         }
         // Make them invisible
         ShowResultGTs(false);
         go = GameObject.Find("HighScore");
         string hScore = "High Score: " + Utils.AddCommasToNumber(HIGH_SCORE);
-        go.GetComponent<GUIText>().text = hScore;
+        go.GetComponent<Text>().text = hScore;
     }
 
     void ShowResultGTs(bool show)
